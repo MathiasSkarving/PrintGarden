@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>PrintGarden</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/addPost.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h1>Welcome to PrintGarden</h1>
+        </div>
+        <div class="sub-title">
+            <p>Share your ideas, projects, and collaborate with others!</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="tool-bar">
+            <button class="beauty-button" id="createPostButton" onclick="createPost()">Create Post</button>
+        </div>
+        <div id="postsContainer" class="content">
+            <h2>Posts</h2>
+        </div>
+    </main>
+
+    <footer>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="html/About.html">About</a></li>
+                <li><a href="html/Contact.html">Contact</a></li>
+                <li><a href="html/Post.html">Posts</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+
+    <template id="postTemplate">
+        <div class="post">
+            <h3 id="postTitle"><strong></strong></h3>
+            <p id="postContent"></p>
+        </div>
+    </template>
+</body>
+
+
+</html>
