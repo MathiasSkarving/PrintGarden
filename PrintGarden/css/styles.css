@@ -1,186 +1,296 @@
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
+
 /* 2. Remove default margin */
 * {
   margin: 0;
 }
+
 /* 3. Enable keyword animations */
 @media (prefers-reduced-motion: no-preference) {
   html {
     interpolate-size: allow-keywords;
   }
 }
+
 body {
   /* 4. Add accessible line-height */
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
 }
+
 /* 6. Improve media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
+
 /* 7. Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
+
 /* 8. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
+
 /* 9. Improve line wrapping */
 p {
   text-wrap: pretty;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
+
 /*
   10. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
-/* Popup container */
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
-/* The actual popup (appears on top) */
-.popup .popuptext {
-  visibility: hidden;
-  width: 160px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -80px;
-}
-
-/* Popup arrow */
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
 .sub-title {
-    text-align: center;
-    padding: 15px;
-    padding-top: 5px;
+  text-align: center;
+  padding: 15px;
+  padding-top: 5px;
 }
 
 .title {
-    text-align: center;
-    padding: 15px;
-    padding-bottom: 5px;
+  text-align: center;
+  padding: 15px;
+  padding-bottom: 5px;
 }
 
 header {
-    background-color: #2c3e50;
-    /* Darker shade for the header */
-    text-align: center;
+  background-color: #2c502d;
+  /* Darker shade for the header */
+  text-align: center;
 }
 
 .tool-bar {
-    background-color: #34495e;
-    /* Slightly lighter shade for the toolbar */
-    padding: 10px;
-    text-align: center;
+  background-color: #395e34;
+  /* Slightly lighter shade for the toolbar */
+  padding: 10px;
+  text-align: center;
 }
 
 .content {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-    /* Center the content */
-    text-align: center;
+  padding: 20px;
+  max-width: 50%;
+  margin: auto;
+  /* Center the content */
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  /* Full width */
+  padding: 10px;
+  /* Space inside the textarea */
+  border: 1px solid #ccc;
+  /* Light border */
+  border-radius: 5px;
+  /* Rounded corners */
+  background-color: #2c2c2c;
+  /* Dark background */
+  color: #e0e0e0;
+  /* Light text color */
+  font-size: 16px;
+  /* Readable font size */
+  resize: vertical;
+  /* Allow vertical resizing */
+}
+
+button {
+  background-color: #444444;
+  /* Green color for buttons */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  /* Rounded corners */
+  transition: background-color 0.3s;
+  /* Smooth color transition */
+}
+
+.popup-content {
+  align-items: center;
+  text-align: center;
+  background-color: #333232;
+  /* White form background */
+  padding: 20px 25px;
+  /* Space inside the form */
+  border-radius: 5px;
+  /* Rounded corners */
+  width: auto;
+  /* Fixed width */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  /* Slight shadow for depth */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* Space between elements */
+}
+
+.post {
+  background-color: #2c2c2c;
+  /* Dark background for posts */
+  padding: 15px;
+  /* Space inside the post */
+  border-radius: 5px;
+  /* Rounded corners */
+  /* Space between posts */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  /* Slight shadow for depth */
+  display: flex;
+  flex-direction: column;
+}
+
+.post img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.post-table {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* exactly 5 columns */
+  width: 90%;
+  margin: 20px auto;
+  gap: 5px;
+}
+
+.recent-posts {
+  padding: 20px;
+  max-width: 80%;
+  margin: auto;
+  /* Center the content */
+  text-align: center;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  /* Center buttons */
+  gap: 10px;
+  /* Space between buttons */
+  width: 100%;
+  height: fit-content;
+  background-color: #242424;
+  /* Green color for buttons */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  /* Rounded corners */
+  transition: background-color 0.3s;
+  /* Smooth color transition */
 }
 
 .beauty-button {
-    background-color: #1abc63;
-    /* Green color for buttons */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    /* Rounded corners */
-    transition: background-color 0.3s;
-    /* Smooth color transition */
+  background-color: #444444;
+  /* Green color for buttons */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  /* Rounded corners */
+  transition: background-color 0.3s;
+  /* Smooth color transition */
+}
+
+.beauty-button:hover {
+  background-color: #2e2d2d;
+  /* Darker green on hover */
 }
 
 .nav-links {
-    list-style: none;
-    padding: 0;
-    margin-right: 0;
-    display: flex;
-    justify-content: center;
-    /* Center the navigation links */
+  list-style: none;
+  padding: 0;
+  margin-right: 0;
+  display: flex;
+  justify-content: center;
+  /* Center the navigation links */
 }
 
 .nav-links li {
-    margin: 0 15px;
-    /* Space between links */
+  margin: 0 15px;
+  /* Space between links */
 }
 
 nav a {
-    color: #1abc63;
-    /* Green color for links */
-    text-decoration: none;
-    /* Remove underline */
-    padding: 10px 15px;
-    /* Padding for clickable area */
-    transition: background-color 0.3s;
-    /* Smooth color transition */
-    border-radius: 5px;
+  color: #1abc63;
+  /* Green color for links */
+  text-decoration: none;
+  /* Remove underline */
+  padding: 10px 15px;
+  /* Padding for clickable area */
+  transition: background-color 0.3s;
+  /* Smooth color transition */
+  border-radius: 5px;
 }
 
 nav a:hover {
-    background-color: #16a085;
-    /* Darker green on hover */
-    border-radius: 5px;
-    /* Rounded corners on hover */
+  background-color: #07361b;
+  /* Darker green on hover */
+  border-radius: 5px;
+  /* Rounded corners on hover */
 }
 
 footer {
-    background-color: rgb(30, 30, 30);
-    padding: 10px 0;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+  background-color: rgb(30, 30, 30);
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 
 }
 
 main {
-    margin-bottom: 50px;
-    /* Space for the fixed footer */
+  margin-bottom: 50px;
+  /* Space for the fixed footer */
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    color: #e0e0e0;
-    background-color: #1a1a1a;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+  font-family: 'Arial', sans-serif;
+  color: #e0e0e0;
+  background-color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
-
