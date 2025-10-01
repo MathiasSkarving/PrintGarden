@@ -1,20 +1,12 @@
-const createPostButton = document.getElementById("createPostButton");
-const closePopup = document.getElementById("closePopup");
 const postForm = document.getElementById("postForm");
 const postsContainer = document.getElementById("postsContainer");
 const postTemplate = document.getElementById("postTemplate");
+const cancelButton = postForm.querySelector("#cancelButton");
 
-// Open popup
-createPostButton.addEventListener("click", () => {
-    postForm.style.display = "flex";
+cancelButton.addEventListener("click", () => {
+    window.location.href = "index.html";
 });
 
-// Close popup
-closePopup.addEventListener("click", () => {
-    postForm.style.display = "none";
-});
-
-// Handle post submission
 postForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -27,30 +19,39 @@ postForm.addEventListener("submit", (e) => {
         return;
     }
 
-    const newPost = postTemplate.content.cloneNode(true);
-
-       let clickablePost = newPost.querySelector(".post");
-
-    clickablePost.addEventListener("click", () => {
-        alert("Post clicked!");
-    });
-
-    if (title) newPost.querySelector(".post-title").textContent = title;
-    if (content) newPost.querySelector(".post-text").textContent = content;
-
     if (imageFile) {
         const reader = new FileReader();
         reader.onload = (e) => {
-            const img = newPost.querySelector(".post-image");
-            e.target.result.resize = "contain"; // Ensure the image fits within the post
-            img.src = e.target.result;
-            img.style.display = "block";
-            postsContainer.prepend(newPost); // add post after image is ready
+            const post = {
+                id: Date.now(),
+                title,
+                content,
+                image: e.target.result,
+                createdAt: new Date().toISOString()
+            };
+
+            let posts = JSON.parse(localStorage.getItem("posts")) || [];
+
+            posts.push(post);
+
+            localStorage.setItem("posts", JSON.stringify(posts));
         };
+
         reader.readAsDataURL(imageFile);
     } else {
-        postsContainer.prepend(newPost);
+        const post = {
+            id: Date.now(),
+            title,
+            content,
+            image: null,
+            createdAt: new Date().toISOString()
+        };
+        let posts = JSON.parse(localStorage.getItem("posts")) || [];
+
+        posts.push(post);
+
+        localStorage.setItem("posts", JSON.stringify(posts));
     }
-    postForm.style.display = "none";
+
     postForm.reset();
 });

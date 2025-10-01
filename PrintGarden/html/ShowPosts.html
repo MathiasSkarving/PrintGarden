@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posts - PrintGarden</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>All Posts</h1>
+    </header>
+
+    <main>
+        <div id="postsContainer" class="post-table">
+        </div>
+    </main>
+
+    <footer>
+        <a href="create.html">Create Post</a>
+    </footer>
+
+    <template id="postTemplate">
+        <div class="post">
+            <h2 class="post-title"></h2>
+            <p class="post-content"></p>
+            <img class="post-image">
+        </div>
+    </template>
+
+  <footer>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="../js/showPosts.js"></script>
+</body>
+</html>

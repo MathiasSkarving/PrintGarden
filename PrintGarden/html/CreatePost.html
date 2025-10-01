@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Post - PrintGarden</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Create a New Post</h1>
+    </header>
+
+    <main>
+        <div class="content">
+            <form class="popup-content" id="postForm">
+                <h3>Create Post</h3>
+                <textarea id="postTitle" rows="2" placeholder="Post title"></textarea>
+                <textarea id="postContent" rows="4" placeholder="What's on your mind?"></textarea>
+                <label class="popup-buttons" for="postImage">Upload an image</label>
+                <input type="file" id="postImage" accept="image/*" style="display: none;">
+                <button class="popup-buttons" type="submit">Post</button>
+                <button class="popup-buttons" type="button" id="cancelButton">Back</button>
+            </form>
+        </div>
+    </main>
+
+      <footer>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <template id="postTemplate">
+        <div class="post">
+            <h2 class="post-title"></h2>
+            <p class="post-text"></p>
+            <img class="post-image" style="display:none;">
+            <div class="edit-buttons" style="display: none;">
+                <button class="edit-button">Edit</button>
+                <button class="delete-button">Delete</button>
+            </div>
+        </div>
+    </template>
+
+    <script src="../js/addPost.js"></script>
+</body>
+
+</html>

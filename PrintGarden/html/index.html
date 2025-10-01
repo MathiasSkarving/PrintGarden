@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title>PrintGarden</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h1>Welcome to PrintGarden</h1>
+        </div>
+        <div class="sub-title">
+            <p>Share your ideas, projects, and collaborate with others!</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="tool-bar">
+            <button class="beauty-button" id="createPostsButton">Create Post</button>
+            <button class="beauty-button" id="showPostsButton">Show All Posts</button>
+            <button class="beauty-button" id="editPostsButton">Edit Post</button>
+
+        </div>
+
+        <div class="recent-posts">
+            <h2>Recent Posts</h2>
+            <div id="postsContainer" class="post-table">
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <template id="postTemplate">
+        <div class="post">
+            <h2 class="post-title"></h2>
+            <p class="post-content"></p>
+            <img class="post-image">
+        </div>
+    </template>
+
+
+    <script src="../js/homePage.js"></script>
+</body>
+
+</html>

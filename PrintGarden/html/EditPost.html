@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Post - PrintGarden</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Edit Post</h1>
+    </header>
+
+    <main>
+        <div id="postsContainer" class="post-table"></div>
+    </main>
+
+    <footer>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <template id="postTemplate">
+        <div class="post">
+            <h2 class="post-title"></h2>
+            <p class="post-content"></p>
+            <img class="post-image">
+            <div class="edit-buttons">
+                <button class="beauty-button edit-button">Edit</button>
+                <button class="beauty-button delete-button">Delete</button>
+            </div>
+            <div class="edit-form popup-content" style="display: none;">
+                <textarea class="beauty-button edit-title" rows="2" placeholder="New Title"></textarea>
+                <textarea class="beauty-button edit-content" rows="4" placeholder="New Content"></textarea>
+                <label class="edit-image-label" for="editImage">Upload an image</label>
+                <input id="editImage" type="file" class="edit-image" accept="image/*" style="display: none;">
+                <button class="beauty-button save-button">Save</button>
+                <button class="beauty-button cancel-button">Cancel</button>
+            </div>
+        </div>
+    </template>
+
+    <script src="../js/editPost.js"></script>
+</body>
+
+</html>
